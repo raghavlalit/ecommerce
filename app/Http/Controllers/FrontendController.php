@@ -56,7 +56,7 @@ class FrontendController extends Controller
 
     public function productGrids(){
         $products=Product::query();
-        
+        // dd($products);
         if(!empty($_GET['category'])){
             $slug=explode(',',$_GET['category']);
             // dd($slug);
@@ -104,7 +104,7 @@ class FrontendController extends Controller
     }
     public function productLists(){
         $products=Product::query();
-        
+        // dd($_GET);
         if(!empty($_GET['category'])){
             $slug=explode(',',$_GET['category']);
             // dd($slug);

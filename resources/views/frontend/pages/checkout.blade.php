@@ -174,7 +174,7 @@
                                                 <option value="HK">Hong Kong SAR China</option>
                                                 <option value="HU">Hungary</option>
                                                 <option value="IS">Iceland</option>
-                                                <option value="IN">India</option>
+                                                <option value="IN" selected>India</option>
                                                 <option value="ID">Indonesia</option>
                                                 <option value="IR">Iran</option>
                                                 <option value="IQ">Iraq</option>
@@ -225,7 +225,7 @@
                                                 <option value="MM">Myanmar [Burma]</option>
                                                 <option value="NA">Namibia</option>
                                                 <option value="NR">Nauru</option>
-                                                <option value="NP" selected="selected">Nepal</option>
+                                                <option value="NP">Nepal</option>
                                                 <option value="NL">Netherlands</option>
                                                 <option value="AN">Netherlands Antilles</option>
                                                 <option value="NC">New Caledonia</option>
@@ -402,7 +402,8 @@
                                             {{-- <label class="checkbox-inline" for="1"><input name="updates" id="1" type="checkbox"> Check Payments</label> --}}
                                             <form-group>
                                                 <input name="payment_method"  type="radio" value="cod"> <label> Cash On Delivery</label><br>
-                                                <input name="payment_method"  type="radio" value="paypal"> <label> PayPal</label> 
+                                                <input name="payment_method"  type="radio" value="paypal"> <label> PayPal</label>
+                                                <input name="payment_method"  type="radio" value="rajorpay"> <label> RajorPay</label>
                                             </form-group>
                                             
                                         </div>

@@ -18,6 +18,7 @@ class AdminController extends Controller
         ->orderBy('day')
         ->get();
      $array[] = ['Name', 'Number'];
+    //  dd($data);
      foreach($data as $key => $value)
      {
        $array[++$key] = [$value->day_name, $value->count];
