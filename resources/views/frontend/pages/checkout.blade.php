@@ -386,9 +386,9 @@
                                                 }
                                             @endphp
                                             @if(session('coupon'))
-                                                <li class="last"  id="order_total_price">Total<span>${{number_format($total_amount,2)}}</span></li>
+                                                <li class="last"  id="order_total_price">Total<span>₹{{number_format($total_amount,2)}}</span></li>
                                             @else
-                                                <li class="last"  id="order_total_price">Total<span>${{number_format($total_amount,2)}}</span></li>
+                                                <li class="last"  id="order_total_price">Total<span>₹{{number_format($total_amount,2)}}</span></li>
                                             @endif
                                         </ul>
                                     </div>
@@ -402,8 +402,8 @@
                                             {{-- <label class="checkbox-inline" for="1"><input name="updates" id="1" type="checkbox"> Check Payments</label> --}}
                                             <form-group>
                                                 <input name="payment_method"  type="radio" value="cod"> <label> Cash On Delivery</label><br>
-                                                <input name="payment_method"  type="radio" value="paypal"> <label> PayPal</label>
-                                                <input name="payment_method"  type="radio" value="rajorpay"> <label> RajorPay</label>
+                                                <input name="payment_method"  type="radio" value="paypal"> <label> PayPal</label><br>
+                                                <input name="payment_method"  type="radio" value="razorpay"> <label> RazorPay</label>
                                             </form-group>
                                             
                                         </div>

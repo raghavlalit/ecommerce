@@ -52,22 +52,26 @@
                                 </div>
                                 <div class="col-12">
                                     <div class="form-group login-btn">
-                                        <button class="btn" type="submit">Login</button>
+                                        <button class="btn" type="submit">Login</button> OR
                                         <a href="{{route('register.form')}}" class="btn">Register</a>
-                                        OR
-                                        <a href="{{route('login.redirect','facebook')}}" class="btn btn-facebook"><i class="ti-facebook"></i></a>
-                                        <a href="{{route('login.redirect','github')}}" class="btn btn-github"><i class="ti-github"></i></a>
-                                        <a href="{{route('login.redirect','google')}}" class="btn btn-google"><i class="ti-google"></i></a>
-
                                     </div>
+                                    
+                                </div>
+                                @if (Route::has('password.request'))
+                                    <a class="lost-pass mt-2" href="{{ route('password.reset') }}">
+                                        Lost your password?
+                                    </a>
+                                @endif
+                                <div class="col-12">
                                     <div class="checkbox">
                                         <label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox">Remember me</label>
                                     </div>
-                                    @if (Route::has('password.request'))
-                                        <a class="lost-pass" href="{{ route('password.reset') }}">
-                                            Lost your password?
-                                        </a>
-                                    @endif
+                                </div>
+                                <div class="col-12 mt-3">
+                                    <div class="form-group">
+                                        <a href="{{route('login.redirect','facebook')}}" class="btn btn-facebook"><i class="ti-facebook"></i></a>
+                                        <a href="{{route('login.redirect','google')}}" class="btn btn-google"><i class="ti-google"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </form>

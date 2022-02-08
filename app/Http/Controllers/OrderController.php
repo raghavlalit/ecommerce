@@ -117,15 +117,21 @@ class OrderController extends Controller
             }
         }
         // return $order_data['total_amount'];
+        // dd($request);
         $order_data['status']="new";
         if(request('payment_method')=='paypal'){
             $order_data['payment_method']='paypal';
+            $order_data['payment_status']='paid';
+        }
+        else if(request('payment_method')=='razorpay'){
+            $order_data['payment_method']='razorpay';
             $order_data['payment_status']='paid';
         }
         else{
             $order_data['payment_method']='cod';
             $order_data['payment_status']='Unpaid';
         }
+        // dd($order_data);
         $order->fill($order_data);
         $status=$order->save();
         if($order)
@@ -137,8 +143,11 @@ class OrderController extends Controller
             'fas'=>'fa-file-alt'
         ];
         Notification::send($users, new StatusNotification($details));
-        if(request('payment_method')=='paypal'){
+        if(request('payment_method')=='paypal' ){
             return redirect()->route('payment')->with(['id'=>$order->id]);
+        }
+        if(request('payment_method')=='razorpay'){
+            return redirect()->route('payment-razor')->with(['id'=>$order->id]);
         }
         else{
             session()->forget('cart');

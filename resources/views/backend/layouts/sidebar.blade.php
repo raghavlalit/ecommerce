@@ -56,17 +56,23 @@
 
     <!-- Customers -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#categoryCollapse" aria-expanded="true" aria-controls="categoryCollapse">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#customerCollapse" aria-expanded="true" aria-controls="customerCollapse">
           <i class="fas fa-user"></i>
           <span>Customers</span>
         </a>
-        <div id="categoryCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="customerCollapse" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Customers Options:</h6>
             <a class="collapse-item" href="{{route('customer.index')}}">Customer</a>
             <a class="collapse-item" href="{{route('customer.create')}}">Add Customer</a>
           </div>
         </div>
+    </li>
+    <!-- Address -->
+    <li class="nav-item">
+      <a class="nav-link" href="{{route('address.index')}}">
+          <i class="fas fa-table"></i>
+          <span>Address</span></a>
     </li>
     <!-- Categories -->
     <li class="nav-item">

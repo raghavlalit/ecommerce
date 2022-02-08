@@ -90,7 +90,14 @@ Route::get('payment', 'PayPalController@payment')->name('payment');
 Route::get('cancel', 'PayPalController@cancel')->name('payment.cancel');
 Route::get('payment/success', 'PayPalController@success')->name('payment.success');
 
+#RazorPay
 
+// Route::get('razorpay-payment', 'RazorpayPaymentController@index');
+
+// Route::get('razorpay-payment', [RazorpayPaymentController::class, 'index']);
+// Route::get('razorpay-payment', 'RazorpayPaymentController@store')->name('razorpay.payment.store');
+Route::get('payment-razorpay', 'PaymentController@create')->name('paywithrazorpay');
+Route::post('razorPayment', 'PaymentController@payment')->name('payment-razor');
 
 // Backend section start
 
@@ -132,6 +139,9 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','admin']],function(){
     Route::resource('/shipping','ShippingController');
     // Coupon
     Route::resource('/coupon','CouponController');
+
+    // Address
+    Route::resource('/address','AddressController');
     // Settings
     Route::get('settings','AdminController@settings')->name('settings');
     Route::post('setting/update','AdminController@settingsUpdate')->name('settings.update');
